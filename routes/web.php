@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('login', [ 'as' => 'login', 'uses' => 'PageController@login']);
+
+Route::resource('/', 'TodoController');
+Route::resource('/todo', 'TodoController');
+
+Route::post('/todo/fetchTodo', 'TodoController@fetchTodo');
+Route::post('/todo/{id}/completed', 'TodoController@taskComplted');
+Route::post('/register', 'AuthController@register');
+Route::post('/authenticate', 'AuthController@authenticate');
+Route::get('/logout', 'AuthController@logout');
