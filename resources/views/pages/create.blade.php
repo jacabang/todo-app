@@ -35,14 +35,13 @@
                         <label>Remarks</label>
                         <textarea name="remarks" id="demo-message" placeholder="Enter your message" rows="6">{{$remarks}}</textarea>
                     </div>
-
                     <div class="col-6 col-12-xsmall">
                         <label>Start Date</label>
-                        <input type="text" class="datepicker" name="sDate" value="{{$sDate}}" placeholder="MM-DD-YYYY">
+                        <input type="text" onClick="this.value = ''" class="datepicker" name="sDate" value="{{$sDate}}" placeholder="YYYYY-MM-DD">
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label>End Date</label>
-                        <input type="text" class="datepicker" name="eDate" value="{{$eDate}}" placeholder="MM-DD-YYYY">
+                        <input type="text" onClick="this.value = ''" class="datepicker" name="eDate" value="{{$eDate}}" placeholder="YYYYY-MM-DD" readonly>
                     </div>
                 </div>
             </div>
@@ -55,7 +54,7 @@
 <script>
   $( function() {
     $( ".datepicker").datepicker({
-        dateFormat: 'mm-dd-yy'
+        dateFormat: 'yy-mm-dd'
     });
   } );
 </script>
